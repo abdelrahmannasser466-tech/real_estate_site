@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>تفاصيل المشروع</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {font-family: Arial; direction: rtl; background:#f4f6f8; padding:20px;}
+    .box {max-width:800px; background:#fff; margin:auto; padding:30px; border-radius:10px;}
+    img {width:100%; border-radius:10px;}
+    h1 {margin-top:20px;}
+    ul {list-style:none; padding:0;}
+    li {margin:10px 0; font-size:16px;}
+    .btn {
+      display:block;
+      margin-top:20px;
+      background:#c9a34a;
+      color:#fff;
+      text-align:center;
+      padding:12px;
+      text-decoration:none;
+      border-radius:6px;
+      font-weight:bold;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="box" id="details"></div>
+
+<script src="projects.js"></script>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
+const project = projects.find(p => p.id == id);
+
+document.getElementById("details").innerHTML = `
+  <img src="${project.image}">
+  <h1>${project.name}</h1>
+  <ul>
+    <li>💰 السعر يبدأ من: ${project.price} ج.م</li>
+    <li>📐 المساحة: ${project.area}</li>
+    <li>💳 المقدم: ${project.downPayment}</li>
+    <li>📆 التقسيط: ${project.installment}</li>
+    <li>📍 الموقع: ${project.location}</li>
+  </ul>
+
+  <a class="btn" href="https://wa.me/201554119998" target="_blank">
+    تواصل واتساب
+  </a>
+`;
+</script>
+
+</body>
+</html>
