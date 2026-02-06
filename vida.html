@@ -1,1 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>فيدا ريزيدنس حدائق أكتوبر</title>
+<style>
+body{font-family:Arial,sans-serif;direction:rtl;margin:0;background:#f0f2f5;}
+nav{background:linear-gradient(90deg,#c9a34a,#f3d27a);padding:12px 20px;display:flex;justify-content:space-between;align-items:center;}
+nav h2{color:#fff;margin:0;}
+nav a{color:#fff;text-decoration:none;margin-left:15px;}
+nav a:hover{opacity:.8;}
+.container{max-width:1200px;margin:auto;padding:20px;margin-top:20px;}
+.slider{position:relative;overflow:hidden;border-radius:12px;height:400px;margin-bottom:20px;}
+.slider img{width:100%;height:100%;object-fit:cover;transition:0.4s;}
+.slider-buttons{position:absolute;top:50%;display:flex;justify-content:space-between;left:0;right:0;transform:translateY(-50%);}
+.slider-buttons button{background:rgba(0,0,0,0.5);border:none;color:#fff;font-size:24px;padding:8px 12px;cursor:pointer;border-radius:50%;}
+.details{display:flex;flex-wrap:wrap;gap:15px;margin-top:10px;}
+.detail-box{background:#f9f9f9;padding:12px;border-radius:8px;flex:1;min-width:180px;font-size:14px;}
+.card-buttons{display:flex;gap:10px;margin-top:10px;}
+.card-buttons a{flex:1;text-align:center;padding:10px;border-radius:8px;color:#fff;text-decoration:none;font-weight:bold;}
+.card-buttons .call{background:#1E90FF;}
+.card-buttons .whatsapp{background:#25D366;}
+.card-buttons a:hover{opacity:.85;}
+#map{width:100%;height:300px;border-radius:12px;margin-top:20px;}
+@media(max-width:768px){.details{flex-direction:column;}}
+</style>
+</head>
+<body>
 
+<nav>
+  <h2>شركتنا العقارية</h2>
+  <div>
+    <a href="index.html">الرئيسية</a>
+    <a href="index.html">مشاريعنا</a>
+    <a href="#">تواصل معنا</a>
+  </div>
+</nav>
+
+<div class="container">
+  <h1>فيدا ريزيدنس حدائق أكتوبر</h1>
+
+  <div class="slider">
+    <img id="slider-img" src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c">
+    <div class="slider-buttons">
+      <button id="prev">&#10094;</button>
+      <button id="next">&#10095;</button>
+    </div>
+  </div>
+
+  <div class="details">
+    <div class="detail-box">نوع الوحدة: شقق – دوبلكس</div>
+    <div class="detail-box">يبدأ من: 1,250,000 ج.م</div>
+    <div class="detail-box">الموقع: حدائق أكتوبر – الحي الإيطالي</div>
+    <div class="detail-box">مقدم الحجز: 5%</div>
+    <div class="detail-box">مدة التقسيط: حتى 7 سنوات</div>
+  </div>
+
+  <p>فيدا ريزيدنس مشروع سكني متكامل مع حدائق واسعة، مناطق لعب للأطفال، حمامات سباحة، وصالات رياضية.</p>
+
+  <div class="card-buttons">
+    <a href="tel:+201554119998" class="call">📞 اتصل الآن</a>
+    <a href="https://wa.me/201554119998?text=عايز تفاصيل عن فيدا ريزيدنس حدائق أكتوبر" class="whatsapp" target="_blank">💬 واتساب</a>
+  </div>
+
+  <div id="map"></div>
+</div>
+
+<script>
+const images = [
+  "https://images.unsplash.com/photo-1572120360610-d971b9d7767c",
+  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+  "https://images.unsplash.com/photo-1600585154340-1234567890ab"
+];
+let currentImg = 0;
+const sliderImg = document.getElementById("slider-img");
+
+function showImage(i){ sliderImg.src = images[i]; }
+showImage(currentImg);
+
+document.getElementById("next").onclick = ()=>{
+  currentImg = (currentImg + 1) % images.length;
+  showImage(currentImg);
+};
+document.getElementById("prev").onclick = ()=>{
+  currentImg = (currentImg - 1 + images.length) % images.length;
+  showImage(currentImg);
+};
+
+// Google Map
+function initMap(){
+  const map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat:29.975, lng:30.966 },
+    zoom:16
+  });
+  new google.maps.Marker({ position:{ lat:29.975, lng:30.966 }, map, title:"فيدا ريزيدنس حدائق أكتوبر" });
+}
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+
+</body>
+</html>
