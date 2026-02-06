@@ -3,100 +3,110 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>مول بلازا فيدا 6 أكتوبر</title>
+<title>Mall Plaza Vida October</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <style>
-body{font-family:Arial,sans-serif;direction:rtl;margin:0;background:#f0f2f5;}
-nav{background:linear-gradient(90deg,#c9a34a,#f3d27a);padding:12px 20px;display:flex;justify-content:space-between;align-items:center;}
-nav h2{color:#fff;margin:0;}
-nav a{color:#fff;text-decoration:none;margin-left:15px;}
-nav a:hover{opacity:.8;}
-.container{max-width:1200px;margin:auto;padding:20px;margin-top:20px;}
-.slider{position:relative;overflow:hidden;border-radius:12px;height:400px;margin-bottom:20px;}
-.slider img{width:100%;height:100%;object-fit:cover;transition:0.4s;}
-.slider-buttons{position:absolute;top:50%;display:flex;justify-content:space-between;left:0;right:0;transform:translateY(-50%);}
-.slider-buttons button{background:rgba(0,0,0,0.5);border:none;color:#fff;font-size:24px;padding:8px 12px;cursor:pointer;border-radius:50%;}
-.details{display:flex;flex-wrap:wrap;gap:15px;margin-top:10px;}
-.detail-box{background:#f9f9f9;padding:12px;border-radius:8px;flex:1;min-width:180px;font-size:14px;}
-.card-buttons{display:flex;gap:10px;margin-top:10px;}
-.card-buttons a{flex:1;text-align:center;padding:10px;border-radius:8px;color:#fff;text-decoration:none;font-weight:bold;}
-.card-buttons .call{background:#1E90FF;}
-.card-buttons .whatsapp{background:#25D366;}
-.card-buttons a:hover{opacity:.85;}
-#map{width:100%;height:300px;border-radius:12px;margin-top:20px;}
-@media(max-width:768px){.details{flex-direction:column;}}
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; direction: rtl; margin: 0; background: #fff; color: #333; }
+    
+    /* الجزء العلوي الرمادي الصغير */
+    .top-path { padding: 15px 30px; color: #666; font-size: 0.9rem; background: #f5f5f5; text-align: right; }
+
+    /* حاوية المحتوى الرئيسي الأبيض */
+    .white-section { background: #ffffff; padding: 20px 0; }
+
+    /* العنوان الذهبي الكبير بنفس تنسيق الصورة */
+    .main-header { text-align: center; padding: 10px 20px; }
+    .main-header h1 { color: #c9a34a; font-size: 2.2rem; margin: 0; font-weight: bold; line-height: 1.3; }
+
+    /* جدول المواصفات - الأيقونات الذهبية */
+    .specs-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        padding: 40px 20px;
+        text-align: center;
+        max-width: 1200px;
+        margin: auto;
+    }
+    .spec-box { display: flex; flex-direction: column; align-items: center; }
+    .spec-box i { color: #c9a34a; font-size: 1.8rem; margin-bottom: 20px; }
+    .spec-label { font-weight: bold; font-size: 1.1rem; color: #444; margin-bottom: 25px; }
+    .spec-desc { font-size: 0.95rem; color: #777; line-height: 1.8; }
+
+    /* العنوان المتكرر فوق الصورة */
+    .sub-header { text-align: center; color: #c9a34a; font-size: 2.2rem; font-weight: bold; margin: 40px 0 20px 0; }
+
+    /* الصورة الحقيقية */
+    .project-img-container { width: 90%; max-width: 1000px; margin: auto; border-radius: 8px; overflow: hidden; }
+    .project-img-container img { width: 100%; display: block; height: auto; }
+
+    /* أزرار التواصل السفلى */
+    .footer-contact { position: fixed; bottom: 0; width: 100%; display: flex; height: 65px; z-index: 1000; box-shadow: 0 -2px 10px rgba(0,0,0,0.1); }
+    .footer-contact a { flex: 1; display: flex; align-items: center; justify-content: center; text-decoration: none; color: white; font-weight: bold; font-size: 1.2rem; }
+    .btn-call { background: #1E90FF; }
+    .btn-whatsapp { background: #25D366; }
+
+    @media (max-width: 768px) {
+        .specs-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+        .main-header h1, .sub-header { font-size: 1.6rem; }
+    }
 </style>
 </head>
 <body>
 
-<nav>
-  <h2>شركتنا العقارية</h2>
-  <div>
-    <a href="index.html">الرئيسية</a>
-    <a href="index.html">مشاريعنا</a>
-    <a href="#">تواصل معنا</a>
-  </div>
-</nav>
-
-<div class="container">
-  <h1>مول بلازا فيدا 6 أكتوبر</h1>
-
-  <div class="slider">
-    <img id="slider-img" src="https://images.unsplash.com/photo-1568605114967-8130f3a36994">
-    <div class="slider-buttons">
-      <button id="prev">&#10094;</button>
-      <button id="next">&#10095;</button>
+    <div class="top-path">
+        6 أكتوبر » مول-بلازا-فيدا
     </div>
-  </div>
 
-  <div class="details">
-    <div class="detail-box">نوع الوحدة: محلات تجارية – مكاتب</div>
-    <div class="detail-box">يبدأ من: 3,210,000 ج.م</div>
-    <div class="detail-box">الموقع: 6 أكتوبر – محور 26 يوليو</div>
-    <div class="detail-box">مقدم الحجز: 10%</div>
-    <div class="detail-box">مدة التقسيط: حتى 5 سنوات</div>
-  </div>
+    <div class="white-section">
+        <div class="main-header">
+            <h1>مول بلازا فيدا أكتوبر Mall Plaza Vida October <br> شركة كيان للتطوير العقاري</h1>
+        </div>
 
-  <p>مول بلازا فيدا يضم محلات تجارية ومكاتب بمساحات متنوعة، موقع مميز على محور 26 يوليو، مع خدمات متنوعة للزوار والمستثمرين.</p>
+        <div class="specs-grid">
+            <div class="spec-box">
+                <i class="fas fa-city"></i>
+                <div class="spec-label">نوع الوحدة</div>
+                <div class="spec-desc">إداري، تجاري، طبي</div>
+            </div>
+            <div class="spec-box">
+                <i class="fas fa-dollar-sign"></i>
+                <div class="spec-label">أسعار تبدأ من</div>
+                <div class="spec-desc">3,210,000 جنيه مصري</div>
+            </div>
+            <div class="spec-box">
+                <i class="fas fa-map-marker-alt"></i>
+                <div class="spec-label">الموقع</div>
+                <div class="spec-desc">مدينة 6 أكتوبر</div>
+            </div>
+            <div class="spec-box">
+                <i class="fas fa-pencil-alt"></i>
+                <div class="spec-label">مقدم الحجز</div>
+                <div class="spec-desc">يبدأ من 10%</div>
+            </div>
+            <div class="spec-box">
+                <i class="fas fa-calendar-alt"></i>
+                <div class="spec-label">مدة التقسيط</div>
+                <div class="spec-desc">تصل إلى 8 سنوات</div>
+            </div>
+        </div>
+    </div>
 
-  <div class="card-buttons">
-    <a href="tel:+201554119998" class="call">📞 اتصل الآن</a>
-    <a href="https://wa.me/201554119998?text=عايز تفاصيل عن مول بلازا فيدا" class="whatsapp" target="_blank">💬 واتساب</a>
-  </div>
+    <div class="sub-header">
+        مول بلازا فيدا أكتوبر <br> Mall Plaza Vida October
+    </div>
 
-  <div id="map"></div>
-</div>
+    <div class="project-img-container">
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80" alt="صورة مول بلازا فيدا">
+    </div>
 
-<script>
-const images = [
-  "https://images.unsplash.com/photo-1568605114967-8130f3a36994",
-  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
-  "https://images.unsplash.com/photo-1600585154340-1234567890ab"
-];
-let currentImg = 0;
-const sliderImg = document.getElementById("slider-img");
+    <div style="max-width: 1000px; margin: 30px auto; padding: 0 20px; color: #555; text-align: justify; padding-bottom: 100px;">
+        <p>يعتبر <b>Mall Plaza Vida October</b> الخيار الأمثل للاستثمار التجاري الناجح، حيث يجمع بين التصميم الفاخر والخدمات المتكاملة في قلب مدينة 6 أكتوبر، من تطوير شركة <b>كيان للتطوير العقاري</b> التي تتمتع بخبرة تزيد عن 20 عاماً.</p>
+    </div>
 
-function showImage(i){ sliderImg.src = images[i]; }
-showImage(currentImg);
-
-document.getElementById("next").onclick = ()=>{
-  currentImg = (currentImg + 1) % images.length;
-  showImage(currentImg);
-};
-document.getElementById("prev").onclick = ()=>{
-  currentImg = (currentImg - 1 + images.length) % images.length;
-  showImage(currentImg);
-};
-
-// Google Map
-function initMap(){
-  const map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat:29.9875, lng:30.9978 },
-    zoom:16
-  });
-  new google.maps.Marker({ position:{ lat:29.9875, lng:30.9978 }, map, title:"مول بلازا فيدا 6 أكتوبر" });
-}
-</script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+    <div class="footer-contact">
+        <a href="tel:+201554119998" class="btn-call">📞 اتصل الآن</a>
+        <a href="https://wa.me/201554119998" class="btn-whatsapp">💬 واتساب</a>
+    </div>
 
 </body>
 </html>
