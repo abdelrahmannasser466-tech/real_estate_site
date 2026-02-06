@@ -3,110 +3,138 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mall Plaza Vida October</title>
+<title>مول بلازا فيدا أكتوبر</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <style>
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; direction: rtl; margin: 0; background: #fff; color: #333; }
-    
-    /* الجزء العلوي الرمادي الصغير */
-    .top-path { padding: 15px 30px; color: #666; font-size: 0.9rem; background: #f5f5f5; text-align: right; }
-
-    /* حاوية المحتوى الرئيسي الأبيض */
-    .white-section { background: #ffffff; padding: 20px 0; }
-
-    /* العنوان الذهبي الكبير بنفس تنسيق الصورة */
-    .main-header { text-align: center; padding: 10px 20px; }
-    .main-header h1 { color: #c9a34a; font-size: 2.2rem; margin: 0; font-weight: bold; line-height: 1.3; }
-
-    /* جدول المواصفات - الأيقونات الذهبية */
-    .specs-grid {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        padding: 40px 20px;
-        text-align: center;
-        max-width: 1200px;
-        margin: auto;
-    }
-    .spec-box { display: flex; flex-direction: column; align-items: center; }
-    .spec-box i { color: #c9a34a; font-size: 1.8rem; margin-bottom: 20px; }
-    .spec-label { font-weight: bold; font-size: 1.1rem; color: #444; margin-bottom: 25px; }
-    .spec-desc { font-size: 0.95rem; color: #777; line-height: 1.8; }
-
-    /* العنوان المتكرر فوق الصورة */
-    .sub-header { text-align: center; color: #c9a34a; font-size: 2.2rem; font-weight: bold; margin: 40px 0 20px 0; }
-
-    /* الصورة الحقيقية */
-    .project-img-container { width: 90%; max-width: 1000px; margin: auto; border-radius: 8px; overflow: hidden; }
-    .project-img-container img { width: 100%; display: block; height: auto; }
-
-    /* أزرار التواصل السفلى */
-    .footer-contact { position: fixed; bottom: 0; width: 100%; display: flex; height: 65px; z-index: 1000; box-shadow: 0 -2px 10px rgba(0,0,0,0.1); }
-    .footer-contact a { flex: 1; display: flex; align-items: center; justify-content: center; text-decoration: none; color: white; font-weight: bold; font-size: 1.2rem; }
-    .btn-call { background: #1E90FF; }
-    .btn-whatsapp { background: #25D366; }
-
-    @media (max-width: 768px) {
-        .specs-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
-        .main-header h1, .sub-header { font-size: 1.6rem; }
-    }
+body{font-family:Arial,sans-serif;direction:rtl;margin:0;background:#fff;color:#333;}
+nav{background:linear-gradient(90deg,#c9a34a,#f3d27a);padding:15px 30px;display:flex;justify-content:space-between;align-items:center;}
+nav h2{color:#fff;margin:0;}
+nav a{color:#fff;text-decoration:none;margin-left:15px;font-weight:bold;}
+nav a:hover{opacity:.8;}
+.white-section{background:#fff;padding:20px 0;}
+.main-header{text-align:center;padding:10px 20px;}
+.main-header h1{color:#c9a34a;font-size:2rem;margin:0;font-weight:bold;line-height:1.3;}
+.specs-grid{display:grid;grid-template-columns:repeat(5,1fr);padding:40px 20px;text-align:center;max-width:1200px;margin:auto;}
+.spec-box{display:flex;flex-direction:column;align-items:center;}
+.spec-box i{color:#c9a34a;font-size:1.8rem;margin-bottom:20px;}
+.spec-label{font-weight:bold;font-size:1.1rem;color:#444;margin-bottom:25px;}
+.spec-desc{font-size:0.95rem;color:#777;line-height:1.8;}
+.project-img-container{width:90%;max-width:1000px;margin:auto;border-radius:8px;overflow:hidden;}
+.project-img-container img{width:100%;display:block;height:auto;}
+.footer-contact{position:fixed;bottom:0;width:100%;display:flex;height:65px;z-index:1000;box-shadow:0 -2px 10px rgba(0,0,0,0.1);}
+.footer-contact a{flex:1;display:flex;align-items:center;justify-content:center;text-decoration:none;color:white;font-weight:bold;font-size:1.2rem;}
+.btn-call{background:#1E90FF;}
+.btn-whatsapp{background:#25D366;}
+.footer-contact a:hover{opacity:.85;}
+.extra-buttons{max-width:1000px;margin:30px auto;display:flex;flex-wrap:wrap;gap:15px;justify-content:center;}
+.extra-buttons button{flex:1;min-width:150px;text-align:center;padding:12px;background:#c9a34a;color:#fff;border:none;font-weight:bold;border-radius:8px;cursor:pointer;}
+.extra-buttons button:hover{opacity:.85;}
+/* Modal */
+.modal{display:none;position:fixed;z-index:10000;left:0;top:0;width:100%;height:100%;overflow:auto;background:rgba(0,0,0,0.5);}
+.modal-content{background:#fff;margin:10% auto;padding:20px;border-radius:8px;max-width:400px;position:relative;}
+.modal h2{color:#c9a34a;text-align:center;}
+.modal label{display:block;margin:10px 0 5px;}
+.modal input{width:100%;padding:8px;margin-bottom:10px;border-radius:6px;border:1px solid #ccc;}
+.modal button{background:#c9a34a;color:#fff;padding:10px;width:100%;border:none;border-radius:6px;font-weight:bold;cursor:pointer;}
+.modal button:hover{opacity:.85;}
+.close{position:absolute;top:10px;right:15px;font-size:24px;color:#333;cursor:pointer;}
+/* أيقونة واتساب جانبية */
+.whatsapp-side{position:fixed;bottom:100px;right:20px;background:#25D366;color:#fff;border-radius:50px;padding:15px 20px;font-size:18px;text-decoration:none;display:flex;align-items:center;box-shadow:0 4px 10px rgba(0,0,0,0.2);z-index:1000;}
+.whatsapp-side i{margin-right:10px;font-size:22px;}
+@media(max-width:768px){.specs-grid{grid-template-columns:repeat(2,1fr);gap:30px;} .main-header h1{font-size:1.6rem;}}
 </style>
 </head>
 <body>
 
-    <div class="top-path">
-        6 أكتوبر » مول-بلازا-فيدا
-    </div>
+<nav>
+<h2>شركتنا العقارية</h2>
+<div>
+<a href="index.html">الرئيسية</a>
+<a href="index.html">مشاريعنا</a>
+<a href="#">تواصل معنا</a>
+</div>
+</nav>
 
-    <div class="white-section">
-        <div class="main-header">
-            <h1>مول بلازا فيدا أكتوبر Mall Plaza Vida October <br> شركة كيان للتطوير العقاري</h1>
-        </div>
+<div class="white-section">
+<div class="main-header">
+<h1>مول بلازا فيدا أكتوبر</h1>
+</div>
 
-        <div class="specs-grid">
-            <div class="spec-box">
-                <i class="fas fa-city"></i>
-                <div class="spec-label">نوع الوحدة</div>
-                <div class="spec-desc">إداري، تجاري، طبي</div>
-            </div>
-            <div class="spec-box">
-                <i class="fas fa-dollar-sign"></i>
-                <div class="spec-label">أسعار تبدأ من</div>
-                <div class="spec-desc">3,210,000 جنيه مصري</div>
-            </div>
-            <div class="spec-box">
-                <i class="fas fa-map-marker-alt"></i>
-                <div class="spec-label">الموقع</div>
-                <div class="spec-desc">مدينة 6 أكتوبر</div>
-            </div>
-            <div class="spec-box">
-                <i class="fas fa-pencil-alt"></i>
-                <div class="spec-label">مقدم الحجز</div>
-                <div class="spec-desc">يبدأ من 10%</div>
-            </div>
-            <div class="spec-box">
-                <i class="fas fa-calendar-alt"></i>
-                <div class="spec-label">مدة التقسيط</div>
-                <div class="spec-desc">تصل إلى 8 سنوات</div>
-            </div>
-        </div>
-    </div>
+<div class="specs-grid">
+<div class="spec-box"><i class="fas fa-city"></i><div class="spec-label">نوع الوحدة</div><div class="spec-desc">إداري، تجاري، طبي</div></div>
+<div class="spec-box"><i class="fas fa-dollar-sign"></i><div class="spec-label">أسعار تبدأ من</div><div class="spec-desc">3,210,000 جنيه مصري</div></div>
+<div class="spec-box"><i class="fas fa-map-marker-alt"></i><div class="spec-label">الموقع</div><div class="spec-desc">6 أكتوبر</div></div>
+<div class="spec-box"><i class="fas fa-pencil-alt"></i><div class="spec-label">مقدم الحجز</div><div class="spec-desc">10%</div></div>
+<div class="spec-box"><i class="fas fa-calendar-alt"></i><div class="spec-label">مدة التقسيط</div><div class="spec-desc">حتى 8 سنوات</div></div>
+</div>
+</div>
 
-    <div class="sub-header">
-        مول بلازا فيدا أكتوبر <br> Mall Plaza Vida October
-    </div>
+<div class="project-img-container">
+<img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80" alt="مول بلازا فيدا">
+</div>
 
-    <div class="project-img-container">
-        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80" alt="صورة مول بلازا فيدا">
-    </div>
+<div style="max-width:1000px;margin:30px auto;padding:0 20px;color:#555;text-align:justify;">
+<p>مول بلازا فيدا يجمع بين التصميم الفاخر والخدمات المتكاملة في قلب مدينة 6 أكتوبر، من تطوير شركة كيان للتطوير العقاري.</p>
+</div>
 
-    <div style="max-width: 1000px; margin: 30px auto; padding: 0 20px; color: #555; text-align: justify; padding-bottom: 100px;">
-        <p>يعتبر <b>Mall Plaza Vida October</b> الخيار الأمثل للاستثمار التجاري الناجح، حيث يجمع بين التصميم الفاخر والخدمات المتكاملة في قلب مدينة 6 أكتوبر، من تطوير شركة <b>كيان للتطوير العقاري</b> التي تتمتع بخبرة تزيد عن 20 عاماً.</p>
-    </div>
+<!-- أزرار البروشور والجولة 3D -->
+<div class="extra-buttons">
+<button onclick="openModal()">📄 تحميل البروشور الكامل</button>
+<button onclick="openModal()">🌐 جولة 3D</button>
+<button onclick="openModal()">💰 معرفة تفاصيل الوحدة</button>
+</div>
 
-    <div class="footer-contact">
-        <a href="tel:+201554119998" class="btn-call">📞 اتصل الآن</a>
-        <a href="https://wa.me/201554119998" class="btn-whatsapp">💬 واتساب</a>
-    </div>
+<!-- Modal Form -->
+<div id="modalForm" class="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal()">&times;</span>
+<h2>سجل بياناتك</h2>
+<form id="popupForm">
+<label>الاسم الكامل</label>
+<input type="text" name="name" required>
+<label>رقم الهاتف</label>
+<input type="tel" name="phone" required>
+<button type="submit">سجل الآن</button>
+</form>
+</div>
+</div>
+
+<!-- أيقونة واتساب جانبية -->
+<a href="https://wa.me/201554119998" target="_blank" class="whatsapp-side">
+<i class="fab fa-whatsapp"></i> 01554119998
+</a>
+
+<div class="footer-contact">
+<a href="tel:+201554119998" class="btn-call">📞 اتصل الآن</a>
+<a href="https://wa.me/201554119998" class="btn-whatsapp">💬 واتساب</a>
+</div>
+
+<script>
+const modal = document.getElementById("modalForm");
+const form = document.getElementById("popupForm");
+
+function openModal(){
+  modal.style.display = "block";
+}
+
+function closeModal(){
+  modal.style.display = "none";
+}
+
+form.addEventListener("submit", function(e){
+  e.preventDefault();
+  alert("شكراً لتسجيل بياناتك! سيتم التواصل معك قريباً.");
+  modal.style.display = "none";
+  form.reset();
+});
+
+// إغلاق عند الضغط خارج النافذة
+window.onclick = function(event){
+  if(event.target == modal){
+    closeModal();
+  }
+}
+</script>
 
 </body>
 </html>
